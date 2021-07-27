@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<script type="text/javascript" language="javascript" src="javascripts/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="javascripts/script.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Form Validation in jQuery</title>
+<style type="text/css">
+	.err{color:#ED0509; font-weight:bold;}
+
+	</style>
+</head>
+
+<body>
+    <center>
+        <div style="width:600px; text-align:left;" >
+        <center><h2>Validation du Formulaire via jquery</h2></center>
+        <p class="err" align="center">Les champs marqués par (*) sont obligatoires</p><br />
+<form id=registration_form method="POST" >
+    <fieldset>
+     <legend>Etat Civil:</legend>
+<table>
+<tr><td>Civilité:</td><td><input type="radio" class="form_text" name="civilite"  value="Mme"/>Mme <input type="radio" class="form_text" name="civilite"  value="Mlle"/>Mlle<input type="radio" class="form_text" name="civilite" value="Mr"/>Mr<span class="error_form" id="civilite_error_message"> *</span></td></tr>  
+<tr><td>Nom: </td><td><input type="text" class="form_text" id="form_nom"></td><td><span class="error_form" id="username_error_message"> *</span></td></tr>
+<tr><td>Prenom: </td><td><input type="text" class="form_text" id="form_prenom"></td><td><span class="error_form" id="prenom_error_message"> *</span></td></tr>
+<tr><td>Date de naissance: </td><td><input type="text" class="form_text" id="form_date"></td><td><span class="error_form" id="date_error_message"> *</span></td></tr>
+<tr><td>Adresse: </td><td><input type="text" class="form_text" id="form_adresse"></td><td><span class="error_form" id="adresse_error_message"> *</span></td></tr>
+<tr><td>Ville: </td><td><input type="text" class="form_text" id="form_ville"></td><td><span class="error_form" id="ville_error_message"> *</span></td></tr>
+<tr><td>Telephone: </td><td><input type="text" class="form_text" id="form_phone"></td><td><span class="error_form" id="phone_error_message"> *</span></td></tr>
+<tr><td>Email: </td><td><input type="text" class="form_text" id="form_email"></td><td><span class="error_form" id="email_error_message"> *</span></td></tr>
+
+</table>
+</fieldset>
+<br />
+<fieldset>
+<legend>Formation de base:</legend>
+<table>
+    <tr><td>Baccalauréat: </td><td><input type="text" class="form_text" id="form_baccalaureat"></td><td><span class="error_form" id="baccalaureat_error_message"> *</span></td></tr><tr>
+    <tr><td>serie: </td><td><input type="text" class="form_text" id="form_serie"></td><td><span class="error_form" id="serie_error_message"> * </span></td></tr><tr>
+    <tr><td>Etabilssement: </td><td><input type="text" class="form_text" id="form_etablisement"></td><td><span class="error_form" id="etablisement_error_message"> *</span></td></tr><tr>
+
+<tr></tr><td >Année:</td>
+<td>
+<select name="annee" id="form_annee" >
+<option value="" ></option>
+<script language="javascript">
+for(var i=2021;i>=2000;i--){
+	document.write("<option value='"+i+"'>"+i+"</option>");
+
+}
+
+</script>
+
+
+</select><span class="error_form" id="annee_error_message"> *</span>
+</td></tr>
+</table>
+</fieldset>
+<br />
+<fieldset>
+<legend>Expériences professionnelles:</legend>
+<table>
+<tr><td><textarea cols="70" rows="10" id="form_exp" name="exp"  placeholder="Expériences professionnelles"></textarea></td>
+<td ><span class="error_form" id="exp_error_message"> *</span></td></tr>
+</table>
+</fieldset>
+<br />
+<fieldset>
+<legend>Langues:</legend>
+<table>
+<tr><td width="20"></td><td>
+<input type="checkbox" value="Arabe"  id="form_langue" name="langues[]"/>Arabe<br />
+<input type="checkbox" value="Français" id="form_langue"  name="langues[]"/>Français<br />
+<input type="checkbox" value="Anglais"  id="form_langue" name="langues[]"/>Anglais
+</td>
+
+<td >&nbsp;&nbsp;<span class="error_form" id="langue_error_message"> *</span></td>
+</tr>
+
+</table>
+</fieldset>
+<br />
+<table width="100%"><tr align="right"><td><input type="submit" class="sbmt_btn" value="Submit" id="btn"></td></tr></table>
+
+
+
+
+
+
+
+
+
+</form>
+
+</body>
+</html>
